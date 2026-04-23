@@ -5,10 +5,18 @@ const options = {
     openapi: "3.0.0",
     info: {
       title: "DevelopersHub API",
-      version: "1.0.0"
-    }
+      version: "1.0.0",
+      description: "API documentation for DevelopersHub Agency",
+    },
+    servers: [
+      {
+        url: "http://localhost:5000",
+      },
+    ],
   },
-  apis: ["./routes/*.js"]
+  apis: ["./routes/*.js"], // IMPORTANT: must match your folder
 };
 
-module.exports = swaggerJsdoc(options);
+const swaggerSpec = swaggerJsdoc(options);
+
+module.exports = swaggerSpec;
