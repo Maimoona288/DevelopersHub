@@ -1,26 +1,28 @@
 const mongoose = require("mongoose");
 
-const serviceSchema = new mongoose.Schema(
+const portfolioSchema = new mongoose.Schema(
   {
     title: {
       type: String,
       required: true,
-      trim: true,
     },
     description: {
       type: String,
+    },
+    image: {
+      type: String, // image URL
       required: true,
     },
-    features: [
+    techStack: [
       {
         type: String,
       }
     ],
-    icon: {
-      type: String, // store icon name (e.g. "code", "design")
+    liveLink: {
+      type: String,
     },
   },
   { timestamps: true }
 );
 
-module.exports = mongoose.model("Service", serviceSchema);
+module.exports = mongoose.model("Portfolio", portfolioSchema);
