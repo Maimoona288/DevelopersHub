@@ -21,7 +21,6 @@ export default function Blog() {
   //  Image pool (different images for each blog)
   const fallbackImages = [
     "https://images.unsplash.com/photo-1499750310107-5fef28a66643",
-    // "https://images.unsplash.com/photo-1504639725590-34d0984388bd",
     "https://images.unsplash.com/photo-1521737604893-d14cc237f11d",
     "https://images.unsplash.com/photo-1555066931-4365d14bab8c",
     "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
@@ -47,7 +46,7 @@ export default function Blog() {
             alt="blog background"
           />
 
-          <div className="absolute inset-0 bg-white/90"></div>
+          <div className="absolute inset-0 bg-white/70"></div>
 
           <div className="relative max-w-6xl mx-auto">
             <span className="text-green-600 text-xs font-semibold uppercase tracking-wider">
