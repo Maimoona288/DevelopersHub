@@ -1,3 +1,10 @@
+// import API from "./axios";
+
+// export const getSubscribers = () => API.get("/newsletter");
 import API from "./axios";
 
-export const getSubscribers = () => API.get("/newsletter");
+export const subscribeEmail = (email) =>
+  API.post("/newsletter", { email });
+
+export const getSubscribers = () =>
+  API.get("/newsletter");

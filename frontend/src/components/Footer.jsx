@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import { Mail, Globe, ArrowRight } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { subscribeEmail } from "../Api/newsletter";
 
 export default function Footer() {
   const scrollTo = (id) => {
@@ -14,20 +15,20 @@ export default function Footer() {
   const [status, setStatus] = useState("");
 
   const handleSubscribe = async () => {
-    if (!email) return;
+  if (!email) return;
 
-    try {
-      setStatus("loading");
+  try {
+    setStatus("loading");
 
-      await axios.post("/api/newsletter", { email });
+    await subscribeEmail(email);
 
-      setStatus("success");
-      setEmail("");
-    } catch (err) {
-      console.error(err); 
-      setStatus("error");
-    }
-  };
+    setStatus("success");
+    setEmail("");
+  } catch (err) {
+    console.error(err);
+    setStatus("error");
+  }
+};
 
   return (
     <footer className="bg-black text-white px-6 py-20 relative overflow-hidden">
@@ -83,7 +84,7 @@ export default function Footer() {
             <li onClick={() => scrollTo("about")} className="cursor-pointer hover:text-green-400">About</li>
             <li onClick={() => scrollTo("services")} className="cursor-pointer hover:text-green-400">Services</li>
             <li onClick={() => scrollTo("portfolio")} className="cursor-pointer hover:text-green-400">Portfolio</li>
-            <li onClick={() => scrollTo("contact")} className="cursor-pointer hover:text-green-400">Contact</li>
+            <li onClick={() => scrollTo("booking")} className="cursor-pointer hover:text-green-400">Booking</li>
           </ul>
         </div>
 
@@ -106,7 +107,7 @@ export default function Footer() {
 
           <div className="flex items-center bg-white/10 border border-white/20 rounded-full overflow-hidden">
             <input
-              type="email" // ✅ added proper type
+              type="email" e
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="flex-1 px-4 py-2 bg-transparent text-sm outline-none"
@@ -136,7 +137,7 @@ export default function Footer() {
 
           {/* CTA */}
           <button
-            onClick={() => scrollTo("contact")}
+            onClick={() => scrollTo("booking")}
             className="mt-5 w-full bg-green-400 text-black py-2 rounded-full font-semibold hover:scale-105 transition"
           >
             Subscribe

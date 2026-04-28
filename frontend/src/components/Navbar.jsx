@@ -44,7 +44,7 @@ export default function Navbar() {
       {/* DESKTOP BUTTON */}
       <div className="hidden lg:flex items-center gap-3">
         <Link to="/booking">
-          <button className="px-4 py-2 text-sm rounded-full bg-gradient-to-r from-green-400 to-green-600 text-black font-semibold shadow-md hover:scale-105 transition">
+          <button className="px-4 py-2 text-sm rounded-full bg-green-500 text-black font-semibold shadow-md hover:scale-105 transition">
             Book Consultation
           </button>
         </Link>

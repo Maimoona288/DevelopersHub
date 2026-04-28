@@ -9,7 +9,7 @@ export default function Booking() {
     email: "",
     phone: "",
     service: "",
-    message: "",
+    notes: "",
     date: "",
     time: "",
   });
@@ -29,13 +29,13 @@ export default function Booking() {
     setSuccess(false);
 
     try {
-      await createBooking({
-        name: form.name,
-        email: form.email,
-        date: form.date,
-        time: form.time,
-      });
-
+     await createBooking({
+  name: form.name,
+  email: form.email,
+  date: form.date,
+  time: form.time,
+  notes: form.message, // IMPORTANT FIX
+});
       setSuccess(true);
 
       setForm({
@@ -43,7 +43,7 @@ export default function Booking() {
         email: "",
         phone: "",
         service: "",
-        message: "",
+        notes: "",
         date: "",
         time: "",
       });

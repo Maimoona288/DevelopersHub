@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 // ADMIN
 import AdminPanel from "./pages/Admin/Dashboard";
@@ -10,7 +11,7 @@ import AdminBlogs from "./pages/Admin/AdminBlogs";
 import AdminPortfolio from "./pages/Admin/AdminPortfolio";
 import AdminInquiry from "./pages/Admin/AdminInquiry";
 import AdminNewsletter from "./pages/Admin/AdminNewsletter";
-import AdminBooking from "./pages/Admin/AdminBooking";
+import AdminBookings from "./pages/Admin/AdminBookings";
 
 // PUBLIC PAGES
 import Home from "./pages/Home";
@@ -24,9 +25,7 @@ import TrackBooking from "./pages/TrackBooking";
 function App() {
   return (
     <div className="font-sans bg-[#f7f8f5] text-[#0d0f0a]">
-
       <Routes>
-
         {/* ================= PUBLIC ROUTES ================= */}
         <Route path="/" element={<Home />} />
         <Route path="/services" element={<ServicesPage />} />
@@ -40,6 +39,10 @@ function App() {
         <Route path="/admin/login" element={<Login />} />
 
         {/* ================= ADMIN DASHBOARD ================= */}
+        <Route
+          path="/admin"
+          element={<Navigate to="/admin/dashboard" replace />}
+        />
         <Route
           path="/admin/dashboard"
           element={
@@ -101,16 +104,14 @@ function App() {
 
         {/* ================= ADMIN BOOKINGS ================= */}
         <Route
-          path="/admin/booking"
+          path="/admin/bookings"
           element={
             <AdminRoute>
-              <AdminBooking />
+              <AdminBookings />
             </AdminRoute>
           }
         />
-
       </Routes>
-
     </div>
   );
 }

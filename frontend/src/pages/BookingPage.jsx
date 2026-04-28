@@ -87,6 +87,7 @@ export default function BookingPage() {
             {/* EXTRA INFO */}
             <div className="mt-8 space-y-3 text-gray-300 text-sm">
               <p>✔ Response within 24 hours</p>
+              <p>✔ Track your booking </p>
               <p>✔ Free project consultation</p>
               <p>✔ Full-stack development support</p>
             </div>

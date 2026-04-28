@@ -17,102 +17,104 @@ export default function Portfolio() {
 
   return (
     <Layout>
-    <section className="py-24 px-6 bg-[#f7f8f5] relative overflow-hidden">
+    <section className="bg-[#f7f8f5]">
 
-      {/* BACKGROUND GLOW */}
-      <div className="absolute w-[400px] h-[400px] bg-green-200/10 blur-[120px] rounded-full top-[-120px] right-[-100px]" />
-      <div className="absolute w-[300px] h-[300px] bg-green-100/10 blur-[100px] rounded-full bottom-[-100px] left-[-80px]" />
+  {/* HEADER WITH BACKGROUND IMAGE */}
+  <div className="relative py-20 px-6 overflow-hidden">
 
-      <div className="max-w-6xl mx-auto relative z-10">
+    {/* IMAGE */}
+    <img
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNfpYz1QVZyKRAMHGyidHwEcKdaphAIEBD4A&s"
+      // src="/src/assets/abouttt.jpg"
+      alt="portfolio background"
+      className="absolute  w-full h-full object-cover"
+    />
 
-        {/* HEADER */}
-        <div className="mb-14">
-          <span className="text-green-600 text-xs font-bold uppercase tracking-wide">
-            Our Work
-          </span>
+    {/* OVERLAY */}
+    <div className="absolute inset-0 bg-white/20"></div>
 
-          <h2 className="text-3xl md:text-5xl font-bold mt-3">
-            Featured <span className="text-green-500">Projects</span>
-          </h2>
+    {/* CONTENT */}
+    <div className="relative max-w-6xl mx-auto">
+    
+      <h1 className="text-3xl md:text-5xl font-bold mt-3 leading-tight">
+        Our <span className="text-green-600">Projects</span>
+      </h1>
 
-          <p className="text-gray-500 mt-4 max-w-xl">
-            Modern web applications, scalable systems, and high-performance digital solutions.
-          </p>
-        </div>
+      <p className="mt-4 text-gray-800 max-w-2xl">
+        A collection of modern applications, scalable systems, and high-performance
+        solutions we’ve built for real-world impact.
+      </p>
+    </div>
 
-        {/* GRID */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-7">
+  </div>
 
-          {projects.map((p) => (
-            <motion.div
-              key={p._id}
-              whileHover={{ y: -8 }}
-              transition={{ type: "spring", stiffness: 200 }}
-              className="group bg-white rounded-2xl overflow-hidden border shadow-sm hover:shadow-xl transition"
-            >
+  {/* GRID (CLEAN WHITE BACKGROUND) */}
+  <div className="py-16 px-4 sm:px-6 max-w-7xl mx-auto">
 
-              {/* IMAGE */}
-              <div className="relative h-52 overflow-hidden">
+    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-7">
 
-                <img
-                  src={p.image}
-                  alt={p.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition duration-500"
-                />
+      {projects.map((p) => (
+        <motion.div
+          key={p._id}
+          whileHover={{ y: -8 }}
+          transition={{ type: "spring", stiffness: 200 }}
+          className="group bg-white rounded-2xl overflow-hidden border shadow-sm hover:shadow-xl transition"
+        >
 
-                {/* DARK OVERLAY */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition" />
+          {/* IMAGE */}
+          <div className="relative h-52 overflow-hidden">
+            <img
+              src={p.image}
+              alt={p.title}
+              className="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+            />
 
-                {/* ACTION BUTTONS */}
-                <div className="absolute inset-0 flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition" />
 
-                  {p.liveLink && (
-                    <a
-                      href={p.liveLink}
-                      target="_blank"
-                      className="px-4 py-2 bg-green-400 text-black rounded-full text-sm font-semibold hover:scale-105 transition"
-                    >
-                      Live
-                    </a>
-                  )}
+            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+              {p.liveLink && (
+                <a
+                  href={p.liveLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 bg-green-500 text-white rounded-full text-sm font-medium hover:bg-green-600 transition"
+                >
+                  View Project
+                </a>
+              )}
+            </div>
+          </div>
 
+          {/* CONTENT */}
+          <div className="p-5">
+            <h3 className="font-semibold text-lg group-hover:text-green-600 transition">
+              {p.title}
+            </h3>
 
-                </div>
+            <p className="text-gray-500 text-sm mt-2 line-clamp-3">
+              {p.description}
+            </p>
 
-              </div>
+            <div className="flex flex-wrap gap-2 mt-4">
+              {p.techStack?.map((tech, i) => (
+                <span
+                  key={i}
+                  className="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-md"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </div>
 
-              {/* CONTENT */}
-              <div className="p-5">
+        </motion.div>
+      ))}
 
-                <h3 className="font-bold text-lg group-hover:text-green-600 transition">
-                  {p.title}
-                </h3>
+    </div>
 
-                <p className="text-gray-500 text-sm mt-2 line-clamp-3">
-                  {p.description}
-                </p>
+  </div>
 
-                {/* TECH STACK */}
-                <div className="flex flex-wrap gap-2 mt-4">
-                  {p.techStack?.map((tech, i) => (
-                    <span
-                      key={i}
-                      className="text-xs bg-green-50 text-green-600 px-2 py-1 rounded-full"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-
-              </div>
-
-            </motion.div>
-          ))}
-
-        </div>
-
-      </div>
-    </section>
+</section>
      </Layout>
   );
 }

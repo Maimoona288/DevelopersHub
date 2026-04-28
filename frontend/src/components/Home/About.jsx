@@ -18,7 +18,7 @@ export default function About() {
   className="w-full h-full object-cover rounded-2xl"
 />
 
-            <div className="absolute bottom-[-15px] right-[-10px] bg-gradient-to-r from-green-400 to-green-600 text-black px-5 py-3 rounded-xl shadow-lg text-center">
+            <div className="absolute bottom-[-15px] right-[-10px] bg-green-500 text-black px-5 py-3 rounded-xl shadow-lg text-center">
               <div className="text-2xl md:text-3xl font-extrabold">5+</div>
               <div className="text-[10px] md:text-xs font-semibold">Years Experience</div>
             </div>
@@ -42,7 +42,7 @@ export default function About() {
         {/* RIGHT CONTENT */}
         <div>
 
-          <span className="text-green-600 text-[11px] md:text-xs font-bold uppercase tracking-wide">
+          <span className="text-green-500 text-[11px] md:text-xs font-bold uppercase tracking-wide">
             About DHC
           </span>
 
@@ -69,7 +69,7 @@ export default function About() {
             <a
               href="#contact"
               className="w-full sm:w-auto text-center px-6 py-3 rounded-full 
-              bg-gradient-to-r from-green-400 to-green-600 text-black font-semibold 
+              bg-green-500 text-black font-semibold 
               shadow-md hover:shadow-xl hover:scale-105 transition"
             >
               Work With Us

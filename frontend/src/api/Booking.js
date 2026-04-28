@@ -1,15 +1,30 @@
 import API from "./axios";
 
 // GET ALL BOOKINGS (ADMIN)
-export const getBookings = () => API.get("/bookings");
+export const getBookings = () => {
+  const token = localStorage.getItem("token");
+
+  return API.get("/bookings", {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+};
 
 // CREATE BOOKING (PUBLIC)
 export const createBooking = (data) => API.post("/bookings", data);
 
 // UPDATE STATUS (ADMIN)
-export const updateBooking = (id, status) =>
-  API.put(`/bookings/${id}`, { status });
+export const updateBooking = (id, status) => {
+  const token = localStorage.getItem("token");
 
-// TRACK BY EMAIL (PUBLIC)
-export const trackBooking = (email) =>
-  API.get(`/bookings/track?email=${email}`);
+  return API.put(
+    `/bookings/${id}`,
+    { status },
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
+};

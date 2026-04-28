@@ -90,7 +90,7 @@ export default function Services() {
           <a
             href="/services"
             className="inline-block px-6 py-3 rounded-full font-mediumw-full sm:w-auto text-center
-              bg-gradient-to-r from-green-400 to-green-600 text-black font-semibold 
+              bg-green-500 text-black font-semibold 
               shadow-md hover:shadow-xl hover:scale-105 transition"
           >
             View All Services 
