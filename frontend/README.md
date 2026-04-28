@@ -3,7 +3,6 @@
 A fully functional full-stack web application built as part of the DevelopersHub Internship Program. This platform includes a public-facing agency website and a secure admin panel for managing services, portfolio, blog posts, client inquiries, and meeting bookings.
 
 
----
 
 ## 📁 Project Structure
 
@@ -31,9 +30,9 @@ developershub-platform/
 └── README.md
 ```
 
----
 
-## 🧰 Tech Stack
+
+##  Tech Stack
 
 ### Frontend
 - React.js 
@@ -55,9 +54,10 @@ developershub-platform/
 
 ---
 
-## ✨ Features
+##  Features
 
-### 👤 User Side
+###  User Side
+
 - **Home** — Hero section, services overview, call-to-action
 - **About** — Company info and team
 - **Services** — Dynamically loaded from the database
@@ -66,7 +66,8 @@ developershub-platform/
 - **Contact Form** — Client inquiries stored in the database
 - **Booking System** — Schedule meetings with backend logic
 
-### 🔐 Admin Panel
+###  Admin Panel
+
 - Secure admin login (JWT-based authentication)
 - Add / Edit / Delete services
 - Manage portfolio projects
@@ -74,9 +75,9 @@ developershub-platform/
 - View and respond to client inquiries
 - View all scheduled meetings
 
----
 
-## ⚙️ Getting Started
+
+##  Getting Started
 
 ### Prerequisites
 
@@ -87,7 +88,7 @@ Make sure the following are installed on your machine:
 - MongoDB Atlas account
 - Git
 
----
+
 
 ### 1. Clone the Repository
 
@@ -106,14 +107,12 @@ npm install
 nodemon server.js
 ```
 
-Create a `.env` file inside the `server/` folder:
-
 ```env
 PORT=5000
 MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_jwt_secret_key
 JWT_EXPIRES_IN=7d
-NODE_ENV=development
+
 ```
 
 Start the backend server:
@@ -133,10 +132,9 @@ cd frontend
 npm install
 ```
 
-Create a `.env.local` file inside the `client/` folder:
 
 ```env
-NEXT_PUBLIC_API_URL=http://localhost:5000/api
+     http://localhost:5000/api
 ```
 
 Start the frontend:
@@ -146,10 +144,7 @@ npm run dev
 ```
 
 
-
----
-
-## 🔌 API Documentation
+##  API Documentation
 
 ### Base URL
 ```
@@ -157,21 +152,19 @@ http://localhost:5000/api
 ```
 
 
----
-
 ## 🚢 Deployment
 
 ### Frontend (Vercel)
 
 1. Push your `frontend/` folder to GitHub
-2. Import the repo on [vercel.com](https://vercel.com)
+2. Import the repo on (https://vercel.com)
 3. Set environment variable: `NEXT_PUBLIC_API_URL=https://your-backend-url`
 4. Deploy
 
 ### Backend (Render)
 
 1. Push your `backend/` folder to GitHub
-2. Create a new Web Service on [render.com](https://render.com)
+2. Create a new Web Service on (https://render.com)
 3. Set all environment variables from `server/.env`
 4. Set build command: `npm install`
 5. Set start command: `node index.js` or `npm start`
