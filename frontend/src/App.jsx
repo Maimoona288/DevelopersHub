@@ -102,7 +102,7 @@ function App() {
           }
         />
 
-        {/* ================= ADMIN BOOKINGS ================= */}
+        {/* ================= ADMIN BOOKINGS ================ */}
         <Route
           path="/admin/bookings"
           element={
