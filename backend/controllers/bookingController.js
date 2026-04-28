@@ -27,6 +27,21 @@ exports.getBookings = async (req, res) => {
     res.status(500).json({ msg: "Server error" });
   }
 };
+exports.trackBookingByEmail = async (req, res) => {
+  try {
+    const { email } = req.query;
+
+    if (!email) {
+      return res.status(400).json({ msg: "Email is required" });
+    }
+
+    const bookings = await Booking.find({ email }).sort({ createdAt: -1 });
+
+    res.json(bookings);
+  } catch (error) {
+    res.status(500).json({ msg: "Server error" });
+  }
+};
 
 // UPDATE STATUS
 exports.updateBookingStatus = async (req, res) => {

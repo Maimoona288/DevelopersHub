@@ -10,6 +10,7 @@ exports.getBlogs = async (req, res) => {
   }
 };
 
+
 // CREATE
 exports.createBlog = async (req, res) => {
   try {

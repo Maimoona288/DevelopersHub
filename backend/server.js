@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
+const connectDB = require("./config/db");
 
 dotenv.config();
 
@@ -10,12 +11,14 @@ const swaggerSpec = require("./config/swagger");
 
 app.use(cors());
 app.use(express.json());
+connectDB();
 app.use("/api/auth", require("./routes/authRoutes"));
 app.use("/api/services", require("./routes/serviceRoutes"));
 app.use("/api/portfolio", require("./routes/portfolioRoutes"));
 app.use("/api/blogs", require("./routes/blogRoutes"));
 app.use("/api/inquiry", require("./routes/inquiryRoutes"));
 app.use("/api/bookings", require("./routes/bookingRoutes"));
+app.use("/api/newsletter", require("./routes/newsletterRoutes"));
 
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 app.get("/", (req, res) => {

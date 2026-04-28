@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const auth = require("../middleware/authMiddleware");
+const admin = require("../middleware/adminMiddleware");
 const {
   getServices,
   createService,
@@ -24,7 +25,7 @@ router.get("/", getServices);
  *     summary: Create service (Admin)
  *     tags: [Services]
  */
-router.post("/", auth, createService);
+router.post("/", auth,admin, createService);
 
 /**
  * @swagger
@@ -33,7 +34,7 @@ router.post("/", auth, createService);
  *     summary: Update service (Admin)
  *     tags: [Services]
  */
-router.put("/:id", auth, updateService);
+router.put("/:id", auth,admin, updateService);
 
 /**
  * @swagger
@@ -42,6 +43,6 @@ router.put("/:id", auth, updateService);
  *     summary: Delete service (Admin)
  *     tags: [Services]
  */
-router.delete("/:id", auth, deleteService);
+router.delete("/:id", auth,admin, deleteService);
 
 module.exports = router;

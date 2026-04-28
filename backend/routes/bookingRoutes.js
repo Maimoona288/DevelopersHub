@@ -5,6 +5,7 @@ const {
   createBooking,
   getBookings,
   updateBookingStatus,
+    trackBookingByEmail,
 } = require("../controllers/bookingController");
 
 /**
@@ -24,6 +25,7 @@ router.post("/", createBooking);
  *     tags: [Booking]
  */
 router.get("/", auth, getBookings);
+router.get("/track", trackBookingByEmail);
 
 /**
  * @swagger

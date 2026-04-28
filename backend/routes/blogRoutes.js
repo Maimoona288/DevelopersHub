@@ -16,6 +16,7 @@ const {
  *     tags: [Blogs]
  */
 router.get("/", getBlogs);
+// router.get("/:id", getSingleBlog);
 
 /**
  * @swagger
